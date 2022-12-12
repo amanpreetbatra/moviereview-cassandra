@@ -23,13 +23,15 @@ from flask import Flask, request, jsonify, render_template
 from cassandra.cluster import Cluster
 
 global IP
-IP = '0.0.0.0'
+IP = '172.18.0.2'
 global KEYSPACE
 KEYSPACE = "movie_keyspace"
 
 from models import sync_tabless
 
+
 app = Flask(__name__)
+
 
 cluster = Cluster([IP])
 
