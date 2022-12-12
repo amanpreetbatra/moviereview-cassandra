@@ -16,36 +16,61 @@
 #
 # # if __name__ == '__main__':
 # #     app.run()
-
+import json
+from datetime import datetime
+import uuid
 from flask import Flask, request, jsonify, render_template
 from cassandra.cluster import Cluster
-
+IP = '172.18.0.2'
+KEYSPACE ='movie_keyspace'
 app = Flask(__name__)
+from model import reviews,sync_tabless
 
-cluster = Cluster(['172.18.0.2'])
+cluster = Cluster([IP])
 
 session = cluster.connect()
 k = "CREATE KEYSPACE IF NOT EXISTS movie_keyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };"
 session.execute(k)
-session.set_keyspace('movie_keyspace')
+session.set_keyspace(KEYSPACE)
 
 @app.route('/')
 def display_page():
-    return render_template('homepage.html')
+    query = "SELECT * FROM reviews"
+    result = session.execute(query)
+
+    reviews = []
+    for row in result:
+        reviews.append({
+            "user_name": row.user_name,
+            "review_id": row.review_id,
+            "reviewer": row.reviewer,
+            "movie": row.movie,
+            "rating": row.rating,
+            "review_summary": row.review_summary,
+            "review_date": row.review_date,
+            "review_detail": row.review_detail,
+            "helpful": row.helpful,
+            "created_at": row.created_at
+        }
+        )
+    return render_template('homepage.html', data =reviews)
 
 @app.route('/add_review', methods=['POST'])
 def add_review():
-    data = request.get_json()
+    d1 = dict(request.form)
+    data = d1['review']
+    data = json.loads(data)
+
     user_name = data['user_name']
-    review_id = data['review_id']
+    review_id = uuid.uuid4()
     reviewer = data['reviewer']
     movie = data['movie']
-    rating = data['rating']
+    rating = int(data['rating'])
     review_summary = data['review_summary']
-    review_date = data['review_date']
+    review_date = datetime.now()
     review_detail = data['review_detail']
     helpful = data['helpful']
-    created_at = data['created_at']
+    created_at = datetime.now()
 
     query = "INSERT INTO reviews (user_name,review_id,reviewer,movie,rating,review_summary,review_date,review_detail,helpful,created_at) VALUES (%s, %s, %s,%s, %s, %s,%s, %s, %s,%s)"
     session.execute(query, (
@@ -104,6 +129,10 @@ def edit_review():
 
     return jsonify({'message': 'Review updated successfully'})
 
+@app.route('/sync_table_review')
+def abc():
+    sync_tabless()
+    return "Synced with DB"
 
 if __name__ == '__main__':
     app.run()
