@@ -1,12 +1,14 @@
-
 import uuid
 import datetime
 from cassandra.cqlengine import columns
 from cassandra.cqlengine.models import Model
 from cassandra.cqlengine import connection
 from cassandra.cqlengine.management import sync_table
-from app import IP,KEYSPACE
+# from app import IP, KEYSPACE
+KEYSPACE = "movie_keyspace"
+IP = '0.0.0.0'
 connection.setup([IP], KEYSPACE, protocol_version=3)
+
 
 class reviews(Model):
     user_name = columns.Text()
@@ -23,6 +25,7 @@ class reviews(Model):
 
     def __repr__(self):
         return '%s %s %d' % (self.email, self.username, self.createdAt)
+
 
 def sync_tabless():
     sync_table(reviews)

@@ -4,7 +4,7 @@ from cassandra.cqlengine.management import sync_table
 from cassandra.cqlengine.management import sync_type
 from cassandra.cqlengine.management import drop_table
 
-from model import Review
+from models import reviews
 
 
 def _setup_cassandra(hosts, keyspace):

@@ -21,10 +21,15 @@ from datetime import datetime
 import uuid
 from flask import Flask, request, jsonify, render_template
 from cassandra.cluster import Cluster
-IP = '172.18.0.2'
-KEYSPACE ='movie_keyspace'
+
+global IP
+IP = '0.0.0.0'
+global KEYSPACE
+KEYSPACE = "movie_keyspace"
+
+from models import sync_tabless
+
 app = Flask(__name__)
-from model import reviews,sync_tabless
 
 cluster = Cluster([IP])
 
@@ -32,6 +37,7 @@ session = cluster.connect()
 k = "CREATE KEYSPACE IF NOT EXISTS movie_keyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };"
 session.execute(k)
 session.set_keyspace(KEYSPACE)
+
 
 @app.route('/')
 def display_page():
@@ -53,7 +59,8 @@ def display_page():
             "created_at": row.created_at
         }
         )
-    return render_template('homepage.html', data =reviews)
+    return render_template('homepage.html', data=reviews)
+
 
 @app.route('/add_review', methods=['POST'])
 def add_review():
@@ -74,7 +81,7 @@ def add_review():
 
     query = "INSERT INTO reviews (user_name,review_id,reviewer,movie,rating,review_summary,review_date,review_detail,helpful,created_at) VALUES (%s, %s, %s,%s, %s, %s,%s, %s, %s,%s)"
     session.execute(query, (
-    user_name, review_id, reviewer, movie, rating, review_summary, review_date, review_detail, helpful, created_at))
+        user_name, review_id, reviewer, movie, rating, review_summary, review_date, review_detail, helpful, created_at))
 
     return jsonify({'message': 'Review added successfully'})
 
@@ -129,10 +136,12 @@ def edit_review():
 
     return jsonify({'message': 'Review updated successfully'})
 
+
 @app.route('/sync_table_review')
 def abc():
     sync_tabless()
     return "Synced with DB"
+
 
 if __name__ == '__main__':
     app.run()
