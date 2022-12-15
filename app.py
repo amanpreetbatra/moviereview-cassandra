@@ -147,3 +147,14 @@ def abc():
 
 if __name__ == '__main__':
     app.run()
+
+# 
+# /app
+#     - app_runner.py
+#     /services
+#         - app.py 
+#     /templates
+#         - mainpage.html
+#     /static
+#         /styles
+#             - mainpage.css
