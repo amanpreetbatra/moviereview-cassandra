@@ -3,7 +3,7 @@ click
 Flask
 flask
 Flask-CQLAlchemy
-geomet=
+geomet
 itsdangerous
 Jinja2
 MarkupSafe
