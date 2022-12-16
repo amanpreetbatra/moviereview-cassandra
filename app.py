@@ -139,14 +139,14 @@ def edit_review():
     return jsonify({'message': 'Review updated successfully'})
 
 
-@app.route('/sync_table_review')
+@app.route('/sr')
 def abc():
     sync_tabless()
     return "Synced with DB"
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port="8080")
 
 # 
 # /app
