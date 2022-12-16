@@ -23,7 +23,7 @@ from flask import Flask, request, jsonify, render_template
 from cassandra.cluster import Cluster
 
 global IP
-IP = '52.188.66.157'
+IP = '127.0.0.1'
 global KEYSPACE
 KEYSPACE = "movie_keyspace"
 
