@@ -44,7 +44,7 @@
 	</div>
 <h2>View review</h2>
 	<div class="mid">
-	{% for item in data %}
+	{% for item in data limit:20 %}
 
 
 	<p>Movie title:{{item.movie }} <span id="viewMovieTitle"></span></p>
