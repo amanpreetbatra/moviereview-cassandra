@@ -5,7 +5,7 @@ from cassandra.query import BatchStatement
 
 from cassandra.cluster import Cluster
 
-cluster = Cluster(['127.0.0.1'])
+cluster = Cluster(['172.18.0.2'])
 session = cluster.connect()
 
 # Create keyspace and table
@@ -28,7 +28,7 @@ def insert_batch(batch):
         session.execute_async(query, (item['review_id'],item['reviewer'],item['movie'],item['rating'],item['review_summary'],item['review_date'],item['spoiler_tag'],item['review_detail'],item['helpful']))
 
 
-with open('/home/rajat/Downloads/archive/part-01.json', 'r') as f:
+with open('data.json', 'r') as f:
     data = json.load(f)
 
 num_processes = 4

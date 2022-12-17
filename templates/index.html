@@ -70,9 +70,9 @@
 
 
           <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search this blog" onsubmit="{{ url_for('display_result') }}">
+    <input type="text" class="form-control" placeholder="Search this blog" >
     <div class="input-group-append">
-      <button class="btn btn-secondary" type="button">
+      <button class="btn btn-secondary" type="button" onsubmit="{{ url_for('display_result') }}">
         <i class="fa fa-search"></i>
       </button>
     </div>
