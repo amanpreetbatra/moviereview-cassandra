@@ -49,16 +49,15 @@ def display_page():
     reviews = []
     for row in result:
         reviews.append({
-            "user_name": row.user_name,
             "review_id": row.review_id,
             "reviewer": row.reviewer,
             "movie": row.movie,
             "rating": row.rating,
             "review_summary": row.review_summary,
             "review_date": row.review_date,
+            "spoiler_tag": row.spoiler_tag,
             "review_detail": row.review_detail,
-            "helpful": row.helpful,
-            "created_at": row.created_at
+            "helpful": row.helpful
         }
         )
     return render_template('homepage.html', data=reviews)
@@ -70,44 +69,44 @@ def add_review():
     data = d1['review']
     data = json.loads(data)
 
-    user_name = data['user_name']
-    review_id = uuid.uuid4()
+    review_id = str(uuid.uuid4())
     reviewer = data['reviewer']
     movie = data['movie']
     rating = int(data['rating'])
     review_summary = data['review_summary']
-    review_date = datetime.now()
+    review_date = str(datetime.now())
+    spoiler_tag = data['spoiler_tag']
     review_detail = data['review_detail']
     helpful = data['helpful']
-    created_at = datetime.now()
 
-    query = "INSERT INTO reviews (user_name,review_id,reviewer,movie,rating,review_summary,review_date,review_detail,helpful,created_at) VALUES (%s, %s, %s,%s, %s, %s,%s, %s, %s,%s)"
+
+    query = "INSERT INTO reviews (review_id,reviewer,movie,rating,review_summary,review_date,spoiler_tag,review_detail,helpful) VALUES (%s, %s, %s,%s, %s, %s,%s, %s, %s)"
     session.execute(query, (
-        user_name, review_id, reviewer, movie, rating, review_summary, review_date, review_detail, helpful, created_at))
+        review_id, reviewer, movie, rating, review_summary, review_date, spoiler_tag, review_detail, helpful))
 
     return jsonify({'message': 'Review added successfully'})
 
 
-@app.route('/search_review', methods=['GET'])
+@app.route('/search_movie', methods=['GET'])
 def search_review():
-    movie_name = request.args.get('movie_name')
+    movie_name = request.args.get('movie')
 
-    query = "SELECT * FROM reviews WHERE movie_name=%s"
-    result = session.execute(query, (movie_name,))
+    query = "SELECT * FROM reviews WHERE movie=%s"
+    result = session.execute(query, (movie_name))
 
     reviews = []
     for row in result:
         reviews.append({
-            "user_name": row.user_name,
             "review_id": row.review_id,
             "reviewer": row.reviewer,
             "movie": row.movie,
             "rating": row.rating,
             "review_summary": row.review_summary,
             "review_date": row.review_date,
+            "spoiler_tag": row.spoiler_tag,
             "review_detail": row.review_detail,
             "helpful": row.helpful,
-            "created_at": row.created_at
+
         }
         )
 
@@ -118,9 +117,9 @@ def search_review():
 def delete_review():
     data = request.get_json()
     movie_name = data['movie_name']
-    user_name = data['user_name']
+    user_name = data['reviewer']
 
-    query = "DELETE FROM reviews WHERE movie_name=%s AND user_name=%s"
+    query = "DELETE FROM reviews WHERE movie=%s AND reviewer=%s"
     session.execute(query, (movie_name, user_name))
 
     return jsonify({'message': 'Review deleted successfully'})
@@ -129,11 +128,11 @@ def delete_review():
 @app.route('/edit_review', methods=['POST'])
 def edit_review():
     data = request.get_json()
-    movie_name = data['movie_name']
-    user_name = data['user_name']
+    movie_name = data['movie']
+    user_name = data['reviewer']
     review = data['review']
 
-    query = "UPDATE reviews SET review=%s WHERE movie_name=%s AND user_name=%s"
+    query = "UPDATE reviews SET review=%s WHERE movie=%s AND reviewer=%s"
     session.execute(query, (review, movie_name, user_name))
 
     return jsonify({'message': 'Review updated successfully'})
