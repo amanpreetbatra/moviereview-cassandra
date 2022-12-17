@@ -43,7 +43,7 @@ session.set_keyspace(KEYSPACE)
 
 @app.route('/')
 def display_page():
-    query = "SELECT * FROM reviews"
+    query = "SELECT * FROM reviews LIMIT 100"
     result = session.execute(query)
 
     reviews = []
