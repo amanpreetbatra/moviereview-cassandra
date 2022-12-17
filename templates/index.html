@@ -34,6 +34,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+    <script src="../static/assets/js/jquery-3.6.2.js"></script>
 </head>
 
 <body>
@@ -72,8 +73,8 @@
           <div class="input-group">
     <input type="text" class="form-control" placeholder="Search this blog" >
     <div class="input-group-append">
-      <button class="btn btn-secondary" type="button" onsubmit="{{ url_for('display_result') }}">
-        <i class="fa fa-search"></i>
+      <button id= "search_movies" class="btn btn-secondary" type="button" onclick="{{ url_for('display_result') }}">
+        <i class="fa fa-search">Search</i>
       </button>
     </div>
   </div>
@@ -131,6 +132,10 @@
 
   <!-- Template Main JS File -->
   <script src="../static/assets/js/main.js"></script>
+  <script>$('#search_movies').click(function(){
+   window.location.href="{{ url_for('display_result') }}";
+
+})</script>
 
 </body>
 

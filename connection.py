@@ -1,4 +1,3 @@
-
 from cassandra.cqlengine import connection
 from cassandra.cqlengine.management import sync_table
 from cassandra.cqlengine.management import sync_type
@@ -17,6 +16,7 @@ def _setup_cassandra(hosts, keyspace):
         raise ValueError("hosts only accepts list of ips.")
     connection.setup(hosts=hosts, default_keyspace=keyspace,
                      protocol_version=3)
+
 
 def setup_connections(config):
     """Set connection to Cassandra

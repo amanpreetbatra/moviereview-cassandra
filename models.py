@@ -4,9 +4,10 @@ from cassandra.cqlengine import columns
 from cassandra.cqlengine.models import Model
 from cassandra.cqlengine import connection
 from cassandra.cqlengine.management import sync_table
+
 # from app import IP, KEYSPACE
 KEYSPACE = "movie_keyspace"
-IP = '172.18.0.2'
+IP = '127.0.0.1'
 connection.setup([IP], KEYSPACE, protocol_version=3)
 
 
@@ -21,9 +22,8 @@ class reviews(Model):
     review_detail = columns.Text()
     helpful = columns.List(value_type=columns.Integer())
 
-
     def __repr__(self):
-        return '%s %s %s' % (self.review_id,self.reviewer, self.review_date)
+        return '%s %s %s' % (self.review_id, self.reviewer, self.review_date)
 
 
 def sync_tabless():
