@@ -23,7 +23,7 @@ from flask import Flask, request, jsonify, render_template
 from cassandra.cluster import Cluster
 
 global IP
-IP = '127.0.0.1'
+IP = '172.18.0.2'
 global KEYSPACE
 KEYSPACE = "movie_keyspace"
 
@@ -60,7 +60,27 @@ def display_page():
             "helpful": row.helpful
         }
         )
-    return render_template('homepage.html', data=reviews)
+    return render_template('index.html', data=reviews)
+@app.route('/search', methods=['GET'])
+def display_result():
+    query = "SELECT * FROM reviews LIMIT 100"
+    result = session.execute(query)
+
+    reviews = []
+    for row in result:
+        reviews.append({
+            "review_id": row.review_id,
+            "reviewer": row.reviewer,
+            "movie": row.movie,
+            "rating": row.rating,
+            "review_summary": row.review_summary,
+            "review_date": row.review_date,
+            "spoiler_tag": row.spoiler_tag,
+            "review_detail": row.review_detail,
+            "helpful": row.helpful
+        }
+        )
+    return render_template('reviewblock.html', data=reviews)
 
 
 @app.route('/add_review', methods=['POST'])

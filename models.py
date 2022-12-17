@@ -6,7 +6,7 @@ from cassandra.cqlengine import connection
 from cassandra.cqlengine.management import sync_table
 # from app import IP, KEYSPACE
 KEYSPACE = "movie_keyspace"
-IP = '127.0.0.1'
+IP = '172.18.0.2'
 connection.setup([IP], KEYSPACE, protocol_version=3)
 
 
