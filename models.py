@@ -19,7 +19,7 @@ class reviews(Model):
     review_date = columns.Text()
     spoiler_tag = columns.Integer()
     review_detail = columns.Text()
-    helpful = columns.List(str)
+    helpful = columns.List(value_type=columns.Integer())
 
 
     def __repr__(self):
