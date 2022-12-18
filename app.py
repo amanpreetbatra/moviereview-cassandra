@@ -64,13 +64,14 @@ def display_result():
         )
 
     review = [reviews,movie_name,next_page_state]
+    print(review)
     return render_template('reviewblock.html', data=review)
 
 
 @app.route('/get_review', methods=['POST'])
 def get_review():
     reviewid = request.form.get('reviewid')
-    print(reviewid)
+
     query = "SELECT * FROM movie_keyspace.reviews WHERE  review_id='{}' ;".format(reviewid)
     result = session.execute(query)
 
@@ -89,7 +90,7 @@ def get_review():
 
         }
         )
-    print(reviews)
+
     return render_template('movie_detailed.html', data=reviews)
 
 
