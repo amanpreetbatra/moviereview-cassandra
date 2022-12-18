@@ -39,6 +39,7 @@ def display_result():
     retry_policy = RetryPolicy()
     page_size = 8
     page_state = request.form.get('page_state', default=None)
+    print(page_state)
     if page_state == None:
         pass
     else:
