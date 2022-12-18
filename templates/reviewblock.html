@@ -1,6 +1,5 @@
 {% extends "home.html" %}
 {% block content %}
-    <div style="overflow: scroll;">
 {% for item in data.0 %}
 
 <div id = "{{ item.review_id }}" class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
@@ -32,7 +31,7 @@
           </div>
         </div>
 {% endfor %}
-    </div>
+
     <form   action="{{ url_for('display_result') }}"   method="POST">
         <input name="search_value" type="hidden" value="{{ data.1 }}" placeholder="Search a movie" >
         <input name="page_state" type="hidden" value="{{ data.2 }}" placeholder="Search a movie" >
