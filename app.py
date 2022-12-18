@@ -39,7 +39,9 @@ def display_result():
     retry_policy = RetryPolicy()
     page_size = 8
     page_state = request.form.get('page_state', default=None)
-    if page_state!= None:
+    if page_state == None:
+        pass
+    else:
         page_state =binascii.unhexlify(page_state)
     movie_name = request.form.get('search_value')
     query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%'; ".format(movie_name)
