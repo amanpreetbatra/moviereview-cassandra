@@ -78,6 +78,8 @@ def display_result():
             "review_summary": row.review_summary
         }
         )
+    print(result_set)
+    print(reviews)
     review = [reviews,movie_name,next_page_state]
     return render_template('reviewblock.html', data=review)
 
