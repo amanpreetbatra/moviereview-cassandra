@@ -54,7 +54,10 @@ def display_result():
     )
     result_set = session.execute(stmt,paging_state=page_state)
     items = result_set.current_rows
-    hex_string = binascii.hexlify(result_set.paging_state)
+    if page_state == None:
+        hex_string = result_set.paging_state
+    else:
+        hex_string = binascii.hexlify(result_set.paging_state)
     next_page_state = hex_string
 
     reviews = []
