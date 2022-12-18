@@ -31,7 +31,7 @@
           </div>
         </div>
 {% endfor %}
-
+<div>
     <form   action="{{ url_for('display_result') }}"   method="POST">
         <input name="search_value" type="hidden" value="{{ data.1 }}" placeholder="Search a movie" >
         <input name="page_state" type="hidden" value="{{ data.2 }}" placeholder="Search a movie" >
@@ -40,6 +40,6 @@
         <i class="fa fa-search">Next</i>
       </button>
     </div>
-
      </form>
+    </div>
 {% endblock %}
