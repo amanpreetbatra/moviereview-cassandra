@@ -1,7 +1,7 @@
 {% extends "home.html" %}
 {% block content %}
 {% for item in data.0 %}
-<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+<div id = "myDiv" class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
           <div class="icon-box">
               <div name = "next_page_state" class="hidden" style="display: none">{{ data.next_page_state }}</div>
               <div class="hidden" style="display: none">{{ item.review_id }}</div>
@@ -15,6 +15,17 @@
               <h5 class="rating"><b>Rating:</b> {{ item.rating}}</h5>
             <p class="description">{{ item.review_summary }}</p>
               <button class="btn btn-light bi-justify-right" type="submit" value="submit" name="submit">View</button>
+                  <script>
+  // Get the div and form elements
+  const div = document.getElementById('myDiv');
+
+  // Attach a click event listener to the div
+  div.addEventListener('click', function() {
+    // When the div is clicked, find the submit button inside the form and click it
+    const submitButton = div.querySelector('button[type="submit"]');
+    submitButton.click();
+  });
+</script>
               </form>
           </div>
         </div>
