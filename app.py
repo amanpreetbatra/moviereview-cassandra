@@ -50,7 +50,7 @@ def display_result():
     )
     result_set = session.execute(stmt,paging_state=page_state)
     items = result_set.current_rows
-    next_page_state = result_set.paging_state.decode("utf-8")
+    next_page_state = result_set.paging_state
 
     reviews = []
 
