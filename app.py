@@ -60,10 +60,9 @@ def display_result():
     stmt = SimpleStatement(
         query,
         fetch_size=page_size,
-        paging_state=page_state,
         retry_policy=retry_policy
     )
-    result_set = session.execute(stmt)
+    result_set = session.execute(stmt,paging_state=page_state)
     items = result_set.current_rows
     next_page_state = result_set.paging_state
     # r = rr.objects.filter(movie=movie_name)
