@@ -70,7 +70,7 @@ def display_result():
 @app.route('/get_review', methods=['POST'])
 def get_review():
     reviewid = request.form.get('reviewid')
-
+    print(reviewid)
     query = "SELECT * FROM movie_keyspace.reviews WHERE  review_id={} ;".format(reviewid)
     result = session.execute(query)
 
