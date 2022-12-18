@@ -40,7 +40,7 @@ def display_result():
     page_size = 8
     page_state = request.form.get('page_state', default=None)
     print(page_state)
-    if page_state == None:
+    if page_state == None or page_state =='None':
         pass
     else:
         page_state =binascii.unhexlify(page_state)
