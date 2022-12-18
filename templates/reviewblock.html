@@ -5,7 +5,7 @@
           <div class="icon-box">
               <div class="hidden" style="display: none">{{ item.review_id }}</div>
             <div class="hidden">{{ item.reviewer }}<i class="ri-stack-line"></i></div>
-            <h4 class="title"><a href="">{{ item.movie}}</a></h4>
+              <h4 class="title"><form action="{{ url_for('get_review') }}" method="POST"><input name="reviewid" class="hidden" style="display: none" value="{{ item.review_id }}"></input><a  value="submit" name="submit">{{ item.movie}}</a></form></h4>
               <h5 class="rating"><b>Rating:</b> {{ item.rating}}</h5>
             <p class="description">{{ item.review_summary }}</p>
           </div>

@@ -67,6 +67,32 @@ def display_result():
     return render_template('reviewblock.html', data=reviews)
 
 
+@app.route('/get_review', methods=['POST'])
+def get_review():
+    reviewid = request.args.get('review_id')
+
+    query = "SELECT * FROM movie_keyspace.reviews WHERE  review_id={} ;".format(reviewid)
+    result = session.execute(query)
+
+    reviews = []
+    for row in result:
+        reviews.append({
+            "review_id": row.review_id,
+            "reviewer": row.reviewer,
+            "movie": row.movie,
+            "rating": row.rating,
+            "review_summary": row.review_summary,
+            "review_date": row.review_date,
+            "spoiler_tag": row.spoiler_tag,
+            "review_detail": row.review_detail,
+            "helpful": row.helpful,
+
+        }
+        )
+
+    return render_template('reviewblock.html', data=reviews)
+
+
 @app.route('/add_review', methods=['POST'])
 def add_review():
     d1 = dict(request.form)
@@ -91,30 +117,6 @@ def add_review():
     return jsonify({'message': 'Review added successfully'})
 
 
-@app.route('/search_movie', methods=['GET'])
-def search_review():
-    movie_name = request.args.get('movie')
-
-    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM movie_keyspace.reviews WHERE  movie LIKE 'The%' ;"
-    result = session.execute(query, (movie_name))
-
-    reviews = []
-    for row in result:
-        reviews.append({
-            "review_id": row.review_id,
-            "reviewer": row.reviewer,
-            "movie": row.movie,
-            "rating": row.rating,
-            "review_summary": row.review_summary,
-            "review_date": row.review_date,
-            "spoiler_tag": row.spoiler_tag,
-            "review_detail": row.review_detail,
-            "helpful": row.helpful,
-
-        }
-        )
-
-    return jsonify({'reviews': reviews})
 
 
 @app.route('/delete_review', methods=['DELETE'])
