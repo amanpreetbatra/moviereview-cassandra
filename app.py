@@ -64,7 +64,7 @@ def display_page():
 @app.route('/display_result', methods=['POST'])
 def display_result():
     movie_name = str(request.values.get('movie'))
-    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie = '{}' ALLOW FILTERING".format(movie_name)
+    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie  LIKE '%{}%'".format(movie_name)
     result = session.execute(query)
 
     # r = rr.objects.filter(movie=movie_name)
