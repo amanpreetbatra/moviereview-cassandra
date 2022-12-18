@@ -1,41 +1,492 @@
-[{
-		"review_id": "rw1133942",
-		"reviewer": "OriginalMovieBuff21",
-		"movie": "Kill Bill: Vol. 2 (2004)",
-		"rating": "8",
-		"review_summary": "Good follow up that answers all the questions",
-		"review_date": "24 July 2005",
-		"spoiler_tag": 0,
-		"review_detail": "After seeing Tarantino's Kill Bill Vol: 1, I got to watch Vol. 2 the next day after seeing it. I liked the first one but didn't really know everything that was going on, but just knowing that she set off the kill 5 individuals who left her dead at her wedding. So I saw Kill Bill: Vol 2 and liked it highly. The movie answered all of my questions to the previous one and had much of a better story and was not unrealistic that much. We finally get to see Bill, who is played by David Carradine who had a really good role in the movie. There is a great conclusion to the movie and had a very good story, along with likable characters, my favorite being Budd. Overall, good movie that answers tons of questions. I recommend Kill Bill Vol. 2.Hedeen's Outlook: 8/10 *** B",
-		"helpful": ["0", "1"]
-	}, {
-		"review_id": "rw1133943",
-		"reviewer": "sentra14",
-		"movie": "Journey to the Unknown (1968\u2013 )",
-		"rating": null,
-		"review_summary": "Excellent series",
-		"review_date": "24 July 2005",
-		"spoiler_tag": 0,
-		"review_detail": "I have the entire series on video, taped mostly from Sky (Europe) broadcasts. After 35+ years, the show still holds up well. Each show featured an American actor in the lead with British supporting players. Some of my favorite actors in the series included George Maharis, formerly of Route 66, and Barbara Jefford, a British actress. Ms. Jefford played an evil aunt to a boy made to wear dresses and pose as a girl. It would be great if the series would be released on DVD but I'm afraid it's one of the countless short-run series that are very fondly remembered but will never make it to disc. This would be a great series for Encore Mysteries to run.",
-		"helpful": ["11", "11"]
-	}, {
-		"review_id": "rw1133946",
-		"reviewer": "GreenwheelFan2002",
-		"movie": "The Island (2005)",
-		"rating": "9",
-		"review_summary": "Not just about action, but about survival...",
-		"review_date": "24 July 2005",
-		"spoiler_tag": 0,
-		"review_detail": "Once again the critics prove themselves as morons! This movie was definitely the best I've seen this summer and deserves a lot more recognition than it is getting. People see the name Michael Bay and instantly think of a sappy action movie not worth the time, but trust me, this one is definitely worth your time and money.I won't comment on specifics of the story because I don't want to spoil it, but as a whole it is very impressive, and tackles many issues that we face in today's society.The acting is great, and Ewan McGregor pulled off his character perfectly. The innocence and wonder that he expresses as Lincoln 6 Echo was the best I've seen from him.I'll admit that the first half of the movie is better than the 2nd half, and the many chase scenes can get frustrating, but the action adds a lot to the movie, and the directing is wonderful.But the one point that this movie tackled which makes it noteworthy is the characterization. I really cared for the two lead characters and wanted to see them succeed in their goal, which is rare in most action films. I even enjoyed seeing the minor characters through the movie, so much that I cared about their outcomes. Not to mention that they are believable. The main character in this film isn't some invulnerable super action hero, he is frail and inexperienced when it comes to fighting. There weren't any moments that I thought he was going out of his capabilities. The characters are confused and weak, and they are depicted wonderfully.Come on people, stop obsessing over the frat comedies, crappy comic-book adaptations, and dumb horror movies, and treat yourself to a good film. Don't pass this one up. GO AND SEE IT NOW!",
-		"helpful": ["2", "5"]
-	}, {
-		"review_id": "rw1133948",
-		"reviewer": "itsascreambaby",
-		"movie": "Win a Date with Tad Hamilton! (2004)",
-		"rating": "3",
-		"review_summary": "Falls under the category: seen it a million times before..",
-		"review_date": "24 July 2005",
-		"spoiler_tag": 0,
-		"review_detail": "This IS a film that has been done too many times already: guy's about to confess his true feelings to the love of his life when someone else sweeps her off her feet, but in the end.. Won't give it away but you will more than likely be able to figure it out ten minutes into the movie. The only positive thing about the flick are the actors and actressess giving their characters persona and the character Tad Hamilton, since he's actually not JUST a slimeball one-dimensional character but actually a guy who does transform during the coarse of the movie, just like the other two leads.. Kinda cute but by the looks of it it didn't make it all that well at the box office. Looks cheap. 3/10",
-		"helpful": ["2", "3"]
-	}]
+[
+  {
+    "review_id": "rw1133942",
+    "reviewer": "OriginalMovieBuff21",
+    "movie": "Kill Bill: Vol. 2 (2004)",
+    "rating": "8",
+    "review_summary": "Good follow up that answers all the questions",
+    "review_date": "24 July 2005",
+    "spoiler_tag": 0,
+    "review_detail": "After seeing Tarantino's Kill Bill Vol: 1, I got to watch Vol. 2 the next day after seeing it. I liked the first one but didn't really know everything that was going on, but just knowing that she set off the kill 5 individuals who left her dead at her wedding. So I saw Kill Bill: Vol 2 and liked it highly. The movie answered all of my questions to the previous one and had much of a better story and was not unrealistic that much. We finally get to see Bill, who is played by David Carradine who had a really good role in the movie. There is a great conclusion to the movie and had a very good story, along with likable characters, my favorite being Budd. Overall, good movie that answers tons of questions. I recommend Kill Bill Vol. 2.Hedeen's Outlook: 8/10 *** B",
+    "helpful": [
+      "0",
+      "1"
+    ]
+  },
+  {
+    "review_id": "rw1133943",
+    "reviewer": "sentra14",
+    "movie": "Journey to the Unknown (1968\u2013 )",
+    "rating": null,
+    "review_summary": "Excellent series",
+    "review_date": "24 July 2005",
+    "spoiler_tag": 0,
+    "review_detail": "I have the entire series on video, taped mostly from Sky (Europe) broadcasts. After 35+ years, the show still holds up well. Each show featured an American actor in the lead with British supporting players. Some of my favorite actors in the series included George Maharis, formerly of Route 66, and Barbara Jefford, a British actress. Ms. Jefford played an evil aunt to a boy made to wear dresses and pose as a girl. It would be great if the series would be released on DVD but I'm afraid it's one of the countless short-run series that are very fondly remembered but will never make it to disc. This would be a great series for Encore Mysteries to run.",
+    "helpful": [
+      "11",
+      "11"
+    ]
+  },
+  {
+    "review_id": "rw1133946",
+    "reviewer": "GreenwheelFan2002",
+    "movie": "The Island (2005)",
+    "rating": "9",
+    "review_summary": "Not just about action, but about survival...",
+    "review_date": "24 July 2005",
+    "spoiler_tag": 0,
+    "review_detail": "Once again the critics prove themselves as morons! This movie was definitely the best I've seen this summer and deserves a lot more recognition than it is getting. People see the name Michael Bay and instantly think of a sappy action movie not worth the time, but trust me, this one is definitely worth your time and money.I won't comment on specifics of the story because I don't want to spoil it, but as a whole it is very impressive, and tackles many issues that we face in today's society.The acting is great, and Ewan McGregor pulled off his character perfectly. The innocence and wonder that he expresses as Lincoln 6 Echo was the best I've seen from him.I'll admit that the first half of the movie is better than the 2nd half, and the many chase scenes can get frustrating, but the action adds a lot to the movie, and the directing is wonderful.But the one point that this movie tackled which makes it noteworthy is the characterization. I really cared for the two lead characters and wanted to see them succeed in their goal, which is rare in most action films. I even enjoyed seeing the minor characters through the movie, so much that I cared about their outcomes. Not to mention that they are believable. The main character in this film isn't some invulnerable super action hero, he is frail and inexperienced when it comes to fighting. There weren't any moments that I thought he was going out of his capabilities. The characters are confused and weak, and they are depicted wonderfully.Come on people, stop obsessing over the frat comedies, crappy comic-book adaptations, and dumb horror movies, and treat yourself to a good film. Don't pass this one up. GO AND SEE IT NOW!",
+    "helpful": [
+      "2",
+      "5"
+    ]
+  },
+  {
+    "review_id": "rw1133948",
+    "reviewer": "itsascreambaby",
+    "movie": "Win a Date with Tad Hamilton! (2004)",
+    "rating": "3",
+    "review_summary": "Falls under the category: seen it a million times before..",
+    "review_date": "24 July 2005",
+    "spoiler_tag": 0,
+    "review_detail": "This IS a film that has been done too many times already: guy's about to confess his true feelings to the love of his life when someone else sweeps her off her feet, but in the end.. Won't give it away but you will more than likely be able to figure it out ten minutes into the movie. The only positive thing about the flick are the actors and actressess giving their characters persona and the character Tad Hamilton, since he's actually not JUST a slimeball one-dimensional character but actually a guy who does transform during the coarse of the movie, just like the other two leads.. Kinda cute but by the looks of it it didn't make it all that well at the box office. Looks cheap. 3/10",
+    "helpful": [
+      "2",
+      "3"
+    ]
+  },
+  {
+    "review_id": "rw5704485",
+    "reviewer": "gasconyway",
+    "movie": "#BlackAF (2020\u2013 )",
+    "rating": "8",
+    "review_summary": "Good but",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "I'm guessing that as a 62 year old white woman I'm not the target demographic but I enjoyed this show. Good to see others perspectives and loved the wry humor. More entertaining than The Office and Parks & Rec. It does make broad negative assumptions about all whites though",
+    "helpful": [
+      "5",
+      "9"
+    ]
+  },
+  {
+    "review_id": "rw5704487",
+    "reviewer": "mmason-15867",
+    "movie": "The Droving (2020)",
+    "rating": "2",
+    "review_summary": "An honest review",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "Here's the truth. There's not much to this movie at all. I was sucked in by the high rating and overly positive reviews that must have submitted by cast and film crew. I won't give a technical analysis like an ameteur movie critic, just my sincere opinion.The Droving was annoying from the jump due to not being able to hear the opening dialogue over the ambient sounds. At times it was so difficult to hear what was being said, I had to turn on the caption. I knew after that The Droving was starting with a negative balance and really good things had to happen moving forward to win me over.Film is beautiful with many nature scenes. It does not appear to be low budget from that standpoint. It also has a decent pace, so I didn't fall asleep (I was close on occasions). With those things being stated, cinematographer and pace could not save this film and rightfully so!Where the Droving falls apart, is with the story, in my humble opinion. The premise is interesting but the story is not well developed. The main character is almost as much as a mystery as the movie's story itself. The climax is very anticlimactic and evolves rapidly to an abrupt ending that left me scratching my head.Finally, there are worse movies out there than The Droving. It had potential to be a good watch, but missed the mark majorly with story and character development. Background sound made it difficult at times to hear dialogue and ending was a total letdown; making it a film that can be bypassed for most other movie options.",
+    "helpful": [
+      "26",
+      "41"
+    ]
+  },
+  {
+    "review_id": "rw5704488",
+    "reviewer": "schroederagustavo",
+    "movie": "All About Eve (1950)",
+    "rating": "10",
+    "review_summary": "Amazing",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "Having seen this film for the first time today, 70 years after its release and still having the impact that it has is outstanding. Excellent writing, directing and performances all around, particularly by Bette Davis and Anne Baxter in their respective immortal roles, as well as unpredictable and filled with complex characters and relationships, All About Eve is one of the best movies I have ever seen.As I got about halfway through the movie, I thought it was about how jealousy and resentment can drive the people away from you. But it's not. It's a movie about manipulation and how horrible people can con people into getting what they want. It's such a great film.",
+    "helpful": [
+      "0",
+      "1"
+    ]
+  },
+  {
+    "review_id": "rw5704489",
+    "reviewer": "welhof1",
+    "movie": "Runaway Train (1985)",
+    "rating": "7",
+    "review_summary": "Impressive action scenes!",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "The movie had some very impressive scenes. Especially the ones that involved the cast fumbling around the rail cars. The incident with the other train plus the runaway train crashing into things was pretty cool.As I was watching I was thinking how bad the acting was from the two leads. Jon voight especially. His voice was comical. Then I find out they both were nominated for academy awards? I just didn't get it.Worth the watch I guess.",
+    "helpful": [
+      "0",
+      "1"
+    ]
+  },
+  {
+    "review_id": "rw5704490",
+    "reviewer": "Evastar",
+    "movie": "Iron Fist (2017\u20132018)",
+    "rating": "9",
+    "review_summary": "Another great Netflix Marvel show!",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "I loved it from the first episode! And I couldn't stop binge-watching it! Love the plot, the actors, the connection to the other 3 shows and the action scenes, which share the same punch-blood-blood-and-more-blood-kick-ass spirit!",
+    "helpful": [
+      "7",
+      "9"
+    ]
+  },
+  {
+    "review_id": "rw5704491",
+    "reviewer": "tioeta",
+    "movie": "The Half of It (I) (2020)",
+    "rating": "4",
+    "review_summary": "Needed the other half of the movie to cover up the messy writing",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "I see that Netflix has a teenage/kids audience and this is why they are making yet another typical rom-com. This movie was suppose to stand out from the rest of the Netflix standards.Unfortunately..The writing was horrible. Love is messy but that doesn't mean the writing should be messy too! It seemed like the writer wanted to make a messy love story but forgot to actually focus on the STORY and rather just used quotes that left us with nothing. The characters had no depth and I felt like the writer was trying too hard to make them sound philosophical rather than just being a normal teenager trying to actually find love and not be in a 70 years old mind.\nNeeded another 1h and 40min to cover up all the many and messy parts of the movie.What triggeres me the most is that through out the whole movie the main core is \"WHAT IS LOVE\" where the movie follows how love is messy but actully never focuses on the long journey of it. All of a sudden the movie is rushed to an ending where all of the 3 protagonists finds the \"key\" to love and then knows everything about love after a KISS and some cliche quotes. COMEON. SHOW US THE LIVELIHOOD OF LOVE. Not the vague idea written in books with random quotes about the universe and stars.Of course the soundtrack has to be good just to occopy the teenagers mind to think that the movie is so great even though it's not. 4 stars for acting, soundtrack, editing etc..",
+    "helpful": [
+      "16",
+      "26"
+    ]
+  },
+  {
+    "review_id": "rw5704492",
+    "reviewer": "stephenrifkin",
+    "movie": "This Is Us (2016\u2013 )",
+    "rating": "2",
+    "review_summary": "All the Pearsons are high maintenance and self righteous",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "This is the show for people for whom nothing even mildly bad has ever happened so they can wallow in the mediocre miseries of others. But keep in mind that the Pearsons are all incredibly high maintenance and self righteous. There's the Pearsons and then there's everyone else and their petty concerns",
+    "helpful": [
+      "1",
+      "5"
+    ]
+  },
+  {
+    "review_id": "rw5704494",
+    "reviewer": "andrewtschroeder",
+    "movie": "Closure (I) (2018)",
+    "rating": "9",
+    "review_summary": "Fun and intriguing",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "This is a fun and intriguing mystery. The acting is strong, Catia Ojeda does a great job as the lead. Its a funny film with a lot of quirky characters, it also looks great. Bonus: Dee Wallace is in it!",
+    "helpful": [
+      "2",
+      "2"
+    ]
+  },
+  {
+    "review_id": "rw5704493",
+    "reviewer": "UniqueParticle",
+    "movie": "Unstoppable (2010)",
+    "rating": "8",
+    "review_summary": "Excellent last film of legendary Director Tony Scott",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "A suspenseful thrilling adventure about a loose train with 2 workers inside it (Denzel Washington) and (Chris Pine) have to try to stop it. The sound is incredible nice that it was at least nominated for an Oscar! The cinematography is wildly beautiful too, Unstoppable is great for the ride of glorious film that it is!",
+    "helpful": [
+      "3",
+      "4"
+    ]
+  },
+  {
+    "review_id": "rw5704496",
+    "reviewer": "Hellooo1234321",
+    "movie": "Dangerous Lies (2020)",
+    "rating": null,
+    "review_summary": "Not bad",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "Highlight was Camila Mendes exceptional acting skills! Story could've been better. I wanted more details in the storyline, then it was a at least a 7.",
+    "helpful": [
+      "2",
+      "3"
+    ]
+  },
+  {
+    "review_id": "rw5704497",
+    "reviewer": "flippereight",
+    "movie": "Beastie Boys Story (2020)",
+    "rating": "3",
+    "review_summary": "The apology tour",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "A lot of excuses and apologizing for their politically incorrect work in the past. I wish they had just owned it. They were doing what they thought was funny; they shouldn't have to apologize for their comedy.",
+    "helpful": [
+      "8",
+      "20"
+    ]
+  },
+  {
+    "review_id": "rw5704500",
+    "reviewer": "ovandoreyna",
+    "movie": "Ruben Brandt, Collector (2018)",
+    "rating": "10",
+    "review_summary": "Magnificent art-animation",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "A fenomel animation, a fabulous storyline. A vivid example of what imagination is.",
+    "helpful": [
+      "0",
+      "1"
+    ]
+  },
+  {
+    "review_id": "rw5704499",
+    "reviewer": "Pairic",
+    "movie": "Some Kind of Hate (2015)",
+    "rating": "7",
+    "review_summary": "Vengeful Spirit",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "Some Kind Of Hate: Lincoln (Ronen Rubenstein) is a Goth, bullied at home and at school, he finally strikes back, stabbing a bully in the face with a fork. He ends up being sent to to the Mind's Eye Academy, a reform school in the desert which encourages spiritual growth. But he faces more bullies there. His angst summons up the vengeful ghost of Moira (Sierra McCormick), a girl who committed suicide at the school due to bullying. She begins to deal with the bullies. Blood runs freely as Moira makes it look as if the bullies are committing suicide. She is terrifying to behold, her limbs slashed from self-harming, wearing a necklace of razor blades. A disturbing film which will stick in your mind long after the final credits roll. Good performances by Rubenstein and McCormick. IMDB has it at 4.5/10 but I think Director Adam Egypt Mortimer's bloody horror flick deserves 7/10. On the Horror Channel.",
+    "helpful": [
+      "1",
+      "2"
+    ]
+  },
+  {
+    "review_id": "rw5704501",
+    "reviewer": "driftingintime",
+    "movie": "Cube Zero (2004)",
+    "rating": "10",
+    "review_summary": "NOT FOR KIDS!",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "I actually liked this movie but it traumatized my little brother (10 yrs old). We're used to watching horror movies together but this movie scared him to the point that he fainted. Definetely don't watch it with your little kids or siblings.",
+    "helpful": [
+      "0",
+      "2"
+    ]
+  },
+  {
+    "review_id": "rw5704502",
+    "reviewer": "Stay_away_from_the_Metropol",
+    "movie": "Carne (1991)",
+    "rating": "8",
+    "review_summary": "Like watching Noe's legacy squeeze out the birth canal & full of sauce",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "Well, I just finished watching Gaspar Noe's CARNE (1991), and now I have seen all of his movies. Not as many people know about Carne because it's a 35 minute short film, not a feature length film - BUT, his debut feature film I STAND ALONE is actually a direct continuation of what occurs in CARNE. Though I have known about I STAND ALONE since about 2003, I didn't hear about CARNE until this year. I actually think CARNE is superior to I STAND ALONE - because of the short runtime it's paced very quickly and features more of Gaspar's stylish cutting and editing. It is thoroughly entertaining, while I STAND ALONE is more a slow-burning, icky-feeling build to a wretched climax that will make pretty much everyone feel like they need to take a shower afterwards.Any way, this movie is very good. Probably one of the best short films I have ever seen. The singular style is turned up to 10. The performances are on point. And the dialogue, subject matter, and some of the visuals are immensely jarring. Though I STAND ALONE is not a movie I would ever recommend to anyone (because of the sickening subject matter), I suggest that for those who are interested, do not watch I STAND ALONE without seeing CARNE first. They should be watched in sequence, just as one should watch something like KILL BILL Vol. 1 and 2.Now that I've seen all of Gaspar Noe's films... I would rank them in this order...ENTER THE VOID > IRREVERSIBLE > CLIMAX > CARNE > LOVE > I STAND ALONE",
+    "helpful": [
+      "4",
+      "4"
+    ]
+  },
+  {
+    "review_id": "rw5704504",
+    "reviewer": "vostf",
+    "movie": "500 Days of Summer (2009)",
+    "rating": "5",
+    "review_summary": "Cutie indie, just boring enough not to rise above its ambition",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "Ah Indies done by brainerds who rever the verbose French New Wave, the intellectual misfits at a loss to communicate with others, especially the other sex. Too bad we are only offered this type of character, acting as a decoy for the screenwriter's psychoanalysis, and thus get a boring train of self-lamentation, more moaning and perennial inability to pull oneself by one's bootstraps.Bring in a good cast, fine production values (as opposed to erratic camera work and post-modernist settings), spread it all over by cutting back and forth in the timeline and bam, you get a cutesy indie. As usual this might have be an excellent short... provided the main character was beefed up with some self deprecating humor for instance.",
+    "helpful": [
+      "0",
+      "1"
+    ]
+  },
+  {
+    "review_id": "rw5704503",
+    "reviewer": "sharonrota",
+    "movie": "8\u00bd (1963)",
+    "rating": "10",
+    "review_summary": "Maybe the biggest masterpiece in the history of cinema",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "Everybody should watch this movie. It's pure art. It's difficult even to explain what genre it is, because it includes realism and surrealism, drama and comedy, critique to the society and more psychological matters. Every dialogue and scene are meaningful. It never came off as pretentious to me, quite the opposite, while the memory of Mastroianni are between the best and most satisfying scenes in the history of cinema. Actually I think the whole asa nisi masa scene is the best scene ever made. This is a real work of art. Many times, when you watch old movies, you get the feeling they are depicting something that belongs to the past and past only or the way they depict things is too linear, but this movie truly is universal and one of the most important pieces of the history of cinema.",
+    "helpful": [
+      "2",
+      "3"
+    ]
+  },
+  {
+    "review_id": "rw5704505",
+    "reviewer": "boblipton",
+    "movie": "Glimpses of New Scotland (1947)",
+    "rating": "5",
+    "review_summary": "Nova Scotia, That Is",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "James A. Fitzpatrick sends the Technicolor cameras to Nova Scotia under the supervision of cinematographer Virgil Miller. Now that the War was over, the MGM Traveltalks series could venture far afield, which meant distant Canada. Then he spends much of his time babbling, as he usually does, information gathered out of almanacs and governmental brochures. Did you know that Nova Scotia sent about a million and a half barrels of apples every year to Britain? Now you do. How large are these barrels? When you find out, let me know.Most of the images are fairly rustic, including covered bridges and pleasant countrysides. The copy that plays on Turner Classic Movies is is very good shape, and the images are very pleasant. If only Fitzpatrick would shut up and let us enjoy them!",
+    "helpful": [
+      "0",
+      "1"
+    ]
+  },
+  {
+    "review_id": "rw5704507",
+    "reviewer": "indieevan",
+    "movie": "The Master (2012)",
+    "rating": "8",
+    "review_summary": "Great Potential, Less Great Execution",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "The premise was a 10, but the execution left a good bit to be desired in certain areas.",
+    "helpful": [
+      "1",
+      "1"
+    ]
+  },
+  {
+    "review_id": "rw5704508",
+    "reviewer": "sjahidul",
+    "movie": "Thappad (I) (2020)",
+    "rating": "10",
+    "review_summary": "Must watch for all the men!!",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "I don't usually write reviews but I had to make an IMDb account and write a review for this one. Great work by director Anubhav Sinha. It's a masterpiece. It's that part of social discussion that people barely speak about. It's a must watch for all the men out there. This might be the awakening that most of us men needed and this one movie can bring about a change in the thought process and behaviour in a lot of men and also a glimpse of realisation in some men who thought it was okay for women to take a beating now and then.I would also like to add that the men who do not like this movie are the men who think they are superior to women and this movie hurt their ego.",
+    "helpful": [
+      "1",
+      "2"
+    ]
+  },
+  {
+    "review_id": "rw5704509",
+    "reviewer": "swtnlow54",
+    "movie": "Matchmaker Mysteries: A Fatal Romance (2020) Season 1, Episode 2",
+    "rating": "10",
+    "review_summary": "Great mystery",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "I love the two of main characters in this mystery. Delightful and cute!!",
+    "helpful": [
+      "3",
+      "5"
+    ]
+  },
+  {
+    "review_id": "rw5704510",
+    "reviewer": "jamesmwanzia-62626",
+    "movie": "Dangerous Lies (2020)",
+    "rating": "1",
+    "review_summary": "Some b***$h!t",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 1,
+    "review_detail": "Low budget though had a good cast but too many story holes and just disapointing over ambitous they tried to give us a parasite ending but failed terribly",
+    "helpful": [
+      "2",
+      "4"
+    ]
+  },
+  {
+    "review_id": "rw5704511",
+    "reviewer": "moviereviewer6700",
+    "movie": "Brooklyn Nine-Nine (2013\u2013 )",
+    "rating": "10",
+    "review_summary": "My Favourite Show Ever! - This Review Contains Spoilers!!!!",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 1,
+    "review_detail": "I already loved Andy Samberg from the Lonely Island and several of his films that he starred in before I found Brooklyn Nine-Nine but this show has taken his ability to make me cry with laughter to another level. Worthy credit must be humongously mentioned as well to Dan Goor & Michael Schur for writing such a masterpiece of a show that is TV GoldHaving arrived late to this show (started watching when Season 6 came out) I knew that I had the opportunity to binge watch seasons upon seasons if I liked it and it only took 3 episodes for me to know it was the show for me. Having not been a big fan of the pilot the second episode of Season 1 was better and by the third I wanted to watch more and more with one of the best parts being when you rewatch old episodes it feels like your watching them for the first time again.The characters all fit together in their own way without anyone overplaying their part, they're also hilariously funny & practically all of them are extremely likeable none more so IMO than Gina Linetti (Chelsea Peretti) also additionally I could possibly say that Amy Santiago & Jake Peralta are quite argubaly the best couple to come out of a TV show potentially ever. Furthermore, I also love Terry's fascination of Yoghurt & speaking in the third person, Rosa's character development throughout the show & Captain's Holt unique take on life.All in all, this is my favourite show and I hope it is commissioned for more series once I have finished the current one",
+    "helpful": [
+      "6",
+      "8"
+    ]
+  },
+  {
+    "review_id": "rw5704512",
+    "reviewer": "lizadeegan",
+    "movie": "After Life (2019\u2013 )",
+    "rating": "10",
+    "review_summary": "A work of pure genius",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "I love everything about this show. I thought they couldn't improve on series 1 but they have! I think I cried in every episode! The characters are so well drawn and human. Ricky is a phenomenal comedian and brilliant actor. His portrayal of a grief stricken husband will break your heart. You can genuinely feel his pain despite the odd glimmer of the happy man he used to be. Of course, I have to mention the dog - oh my God!!! I love the dog!!!! Watch this show please but prepare for tears!!!! Keep up the great work Ricky!!!! You're a legend.",
+    "helpful": [
+      "3",
+      "3"
+    ]
+  },
+  {
+    "review_id": "rw5704513",
+    "reviewer": "pmc69",
+    "movie": "Fool's Gold (I) (2008)",
+    "rating": "1",
+    "review_summary": "Terrible",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "One of the worst movies i have ever seen. Terrible plot and even worse acting. The whole movie was shockingly bad. Do not watch it. Save yourself time.",
+    "helpful": [
+      "0",
+      "0"
+    ]
+  },
+  {
+    "review_id": "rw5704514",
+    "reviewer": "meenanirankari",
+    "movie": "The Raikar Case (2020\u2013 )",
+    "rating": "9",
+    "review_summary": "If you ABSOLUTELY hate cliffhangers, do not watch it until next season arrives..",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 1,
+    "review_detail": "Umm what can i say that doesnt gives away spoiler.. Every it keep you on your toes but there are some element that seemed unnecessary.. It still on a huge cliffhanger.. If only i knew it before watch because i don't enjoy them at all.. It's gonna take away my goodnight sleep now but still it was a good watch..\nYou should hate Eklavya (it's not what you are thinking.. This is purely based as a woman and a human..)",
+    "helpful": [
+      "0",
+      "0"
+    ]
+  },
+  {
+    "review_id": "rw5704515",
+    "reviewer": "isaharo",
+    "movie": "Vida (2018\u20132020)",
+    "rating": "10",
+    "review_summary": "Hooked!",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "My girlfriend and I just started watching it and we are hooked! Sadly finding out there is only 3 seasons. We hope they continue making more seasons. We loved the drama, The Latino pride ,Also the LGBT community. We love how they don't sugar code anything.",
+    "helpful": [
+      "1",
+      "3"
+    ]
+  },
+  {
+    "review_id": "rw5704516",
+    "reviewer": "ian-437",
+    "movie": "Airplane Mode (II) (2019)",
+    "rating": "8",
+    "review_summary": "Very silly, funny movie",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "I guess the world has gotten too serious for movies like this.",
+    "helpful": [
+      "1",
+      "13"
+    ]
+  },
+  {
+    "review_id": "rw5704517",
+    "reviewer": "mysprouts-740-813856",
+    "movie": "Bloodline: Part 13 (2015) Season 1, Episode 13",
+    "rating": "7",
+    "review_summary": "I'm rating the whole season",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "Woo this family. They make my family look normal and that's scary. The first few episodes were tedious. We're told how horrible Danny is without much reason why. They finally start showing his true colors in a way that felt organic. So many lies and unspoken Truths. So many family secrets. And my interest was held for several episodes until the very end. By the end I couldn't figure out why these people want to be in each others lives. They are all miserable. Their relationships are so toxic.\nIt's a good show worthy of watching but it's so hard to get behind any of the characters. I just want one of them to make a good choice. They just keep chasing bad choice after bad choice.",
+    "helpful": [
+      "0",
+      "0"
+    ]
+  },
+  {
+    "review_id": "rw5704518",
+    "reviewer": "seanbrowne-30204",
+    "movie": "Once Upon a Time in London (2019)",
+    "rating": "1",
+    "review_summary": "One word, Pony",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 1,
+    "review_detail": "What a load of tosh....absolute waste of time. No real story, cardboard acting and was like watching a violent series of heartbeat.",
+    "helpful": [
+      "1",
+      "4"
+    ]
+  },
+  {
+    "review_id": "rw5704519",
+    "reviewer": "xuefeiding",
+    "movie": "Jia you er n\u00fc (2005\u2013 )",
+    "rating": "9",
+    "review_summary": "Troubles of Chinese Family Growth",
+    "review_date": "3 May 2020",
+    "spoiler_tag": 0,
+    "review_detail": "When I was a kid, I saw a classic and educational family sitcom. I like the way that parents and children can communicate like friends. Liu Xing, the eldest son of the three children, is really mischievous, but also gives the audience a lot of joy. I like xiadonghai. He can educate children rationally most of the time. Now that I'm older, I feel very relaxed when I watch this play. It's a good play to relieve pressure.",
+    "helpful": [
+      "0",
+      "0"
+    ]
+  }
+]

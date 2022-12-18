@@ -5,6 +5,8 @@ from datetime import datetime
 import uuid
 from flask import Flask, request, jsonify, render_template
 from cassandra.cluster import Cluster
+from cassandra.policies import RetryPolicy
+from cassandra.query import SimpleStatement
 from models import reviews as rr
 load_dotenv()
 global IP
@@ -48,14 +50,26 @@ def display_page():
     return render_template('home.html')
 @app.route('/display_result', methods=['POST'])
 def display_result():
+    retry_policy = RetryPolicy()
+    page_size = 10
+    page_state = request.form.get('page_state', default=None)
     movie_name = request.form.get('search_value')
-    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie  LIKE '%{}%' LIMIT 50".format(movie_name)
-    result = session.execute(query)
+    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie =  '{}' ".format(movie_name)
 
+    stmt = SimpleStatement(
+        query,
+        fetch_size=page_size,
+        paging_state=page_state,
+        retry_policy=retry_policy
+    )
+    result_set = session.execute(stmt)
+    items = result_set.current_rows
+    next_page_state = result_set.paging_state
     # r = rr.objects.filter(movie=movie_name)
     # result = r.get()
     reviews = []
-    for row in result:
+
+    for row in items:
         reviews.append({
             "review_id": row.review_id,
             "reviewer": row.reviewer,
@@ -64,7 +78,8 @@ def display_result():
             "review_summary": row.review_summary
         }
         )
-    return render_template('reviewblock.html', data=reviews)
+    review = [reviews,movie_name,next_page_state]
+    return render_template('reviewblock.html', data=review)
 
 
 @app.route('/get_review', methods=['POST'])
