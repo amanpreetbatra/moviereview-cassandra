@@ -53,6 +53,7 @@ def display_result():
     retry_policy = RetryPolicy()
     page_size = 10
     page_state = request.form.get('page_state', default=None)
+    page_state = None
     movie_name = request.form.get('search_value')
     query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie =  '{}' ".format(movie_name)
 
