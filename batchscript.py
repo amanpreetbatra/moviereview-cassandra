@@ -9,11 +9,12 @@ cluster = Cluster(['172.18.0.2'])
 session = cluster.connect()
 
 # Create keyspace and table
+
 session.execute(
     "CREATE KEYSPACE IF NOT EXISTS movie_keyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 }")
 session.execute("CREATE TABLE IF NOT EXISTS movie_keyspace.reviews (review_id text PRIMARY KEY,reviewer text,movie text,rating text,review_summary text,review_date text,spoiler_tag int,review_detail text,helpful List<text>)")
 
-
+session.execute("CREATE CUSTOM INDEX  fn_contains ON movie_keyspace.reviews(movie)  USING 'org.apache.cassandra.index.sasi.SASIIndex' WITH OPTIONS = { 'mode': 'CONTAINS' };")
 def insert_batch(batch):
     batch_stmt = BatchStatement()
     for item in batch:
