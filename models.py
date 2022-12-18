@@ -1,5 +1,8 @@
 import uuid
 import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv()
 from cassandra.cqlengine import columns
 from cassandra.cqlengine.models import Model
 from cassandra.cqlengine import connection
@@ -7,7 +10,7 @@ from cassandra.cqlengine.management import sync_table
 
 # from app import IP, KEYSPACE
 KEYSPACE = "movie_keyspace"
-IP = '172.18.0.2'
+IP = os.getenv('IP_ADDRESS')
 connection.setup([IP], KEYSPACE, protocol_version=3)
 
 

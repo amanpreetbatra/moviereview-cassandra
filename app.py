@@ -1,29 +1,14 @@
-# import uuid
-# from flask import Flask
-# from flask_cqlalchemy import CQLAlchemy
-# from  model import Review
-# app = Flask(__name__)
-# app.config['CASSANDRA_HOSTS'] = ['172.18.0.2']
-# app.config['CASSANDRA_KEYSPACE'] = "cqlengine"
-# db = CQLAlchemy(app)
-#
-#
-#
-# # @app.route('/')
-# # def hello_world():  # put application's code here
-# #     return 'Hello World!'
-#
-#
-# # if __name__ == '__main__':
-# #     app.run()
+from dotenv import load_dotenv
+import os
 import json
 from datetime import datetime
 import uuid
 from flask import Flask, request, jsonify, render_template
 from cassandra.cluster import Cluster
 from models import reviews as rr
+load_dotenv()
 global IP
-IP = '172.18.0.2'
+IP = os.getenv('IP_ADDRESS')
 global KEYSPACE
 KEYSPACE = "movie_keyspace"
 
@@ -63,8 +48,8 @@ def display_page():
     return render_template('index.html')
 @app.route('/display_result', methods=['POST'])
 def display_result():
-    movie_name = str(request.values.get('movie'))
-    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie  LIKE '%{}%'".format(movie_name)
+    movie_name = request.form.get('search_value')
+    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie  LIKE '%{}%' LIMIT 50".format(movie_name)
     result = session.execute(query)
 
     # r = rr.objects.filter(movie=movie_name)
