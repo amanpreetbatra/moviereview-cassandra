@@ -1,11 +1,14 @@
 import json
 import multiprocessing as mp
 import cassandra
+import os
+from dotenv import load_dotenv
+load_dotenv()
 from cassandra.query import BatchStatement
 
 from cassandra.cluster import Cluster
-
-cluster = Cluster(['172.18.0.2'])
+IP = os.getenv('IP_ADDRESS')
+cluster = Cluster([IP])
 session = cluster.connect()
 
 # Create keyspace and table
