@@ -90,7 +90,7 @@ def get_review():
         }
         )
 
-    return render_template('reviewblock.html', data=reviews)
+    return render_template('movie_detailed.html', data=reviews)
 
 
 @app.route('/add_review', methods=['POST'])
