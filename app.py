@@ -7,6 +7,7 @@ from flask import Flask, request, jsonify, render_template
 from cassandra.cluster import Cluster
 from cassandra.policies import RetryPolicy
 from cassandra.query import SimpleStatement
+import binascii
 from models import reviews as rr
 load_dotenv()
 global IP
@@ -39,7 +40,7 @@ def display_result():
     page_size = 8
     page_state = request.form.get('page_state', default=None)
     if page_state!= None:
-        page_state = page_state
+        page_state =binascii.unhexlify(page_state)
     movie_name = request.form.get('search_value')
     query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%'; ".format(movie_name)
 
@@ -50,7 +51,8 @@ def display_result():
     )
     result_set = session.execute(stmt,paging_state=page_state)
     items = result_set.current_rows
-    next_page_state = result_set.paging_state
+    hex_string = binascii.hexlify(result_set.paging_state)
+    next_page_state = hex_string
 
     reviews = []
 
