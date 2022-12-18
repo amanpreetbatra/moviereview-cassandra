@@ -39,7 +39,7 @@ def display_result():
     page_size = 8
     page_state = request.form.get('page_state', default=None)
     if page_state!= None:
-        page_state = page_state.encode('utf-8')
+        page_state = page_state
     movie_name = request.form.get('search_value')
     query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%'; ".format(movie_name)
 
@@ -51,8 +51,7 @@ def display_result():
     result_set = session.execute(stmt,paging_state=page_state)
     items = result_set.current_rows
     next_page_state = result_set.paging_state.decode("utf-8")
-    # r = rr.objects.filter(movie=movie_name)
-    # result = r.get()
+
     reviews = []
 
     for row in items:
