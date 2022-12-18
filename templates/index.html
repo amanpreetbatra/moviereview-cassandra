@@ -38,8 +38,7 @@
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
+    <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
@@ -58,39 +57,11 @@
 
     </div>
   </header><!-- End Header -->
+{% block body %}
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <form class="container position-relative" data-aos="fade-up" data-aos-delay="100"  action="{{ url_for('display_result') }}" method="POST">
-      <div class="row justify-content-center">
-        <div class="col-xl-7 col-lg-9 text-center bottom-50" style="margin-bottom:2%">
-          <h1>IMDB Movie Reviews Repository </h1>
-          <h2 >Search Movies</h2>
-        </div>
-      </div>
-
-
-
-
-    <input name="search_value" type="text" class="form-control" placeholder="Search a movie" >
-    <div class="input-group-append ">
-      <button id= "search_movies" class="btn btn-secondary " type="submit" value="submit" >
-        <i class="fa fa-search ">Search</i>
-      </button>
-    </div>
-
-
-        <div class="row icon-boxes">
-          {% block content %}
+{% endblock %}
+    {% block content2 %}
         {% endblock %}
-        {% block content2 %}
-        {% endblock %}
-      </div>
-    </form>
-      </div>
-
-
-  </section><!-- End Hero -->
 
 
  {% endblock %}

@@ -45,7 +45,7 @@ def display_page():
     #         "helpful": row.helpful
     #     }
     #     )
-    return render_template('index.html')
+    return render_template('home.html')
 @app.route('/display_result', methods=['POST'])
 def display_result():
     movie_name = request.form.get('search_value')
@@ -71,7 +71,7 @@ def display_result():
 def get_review():
     reviewid = request.form.get('reviewid')
     print(reviewid)
-    query = "SELECT * FROM movie_keyspace.reviews WHERE  review_id={} ;".format(reviewid)
+    query = "SELECT * FROM movie_keyspace.reviews WHERE  review_id='{}' ;".format(reviewid)
     result = session.execute(query)
 
     reviews = []
@@ -89,7 +89,7 @@ def get_review():
 
         }
         )
-
+    print(reviews)
     return render_template('movie_detailed.html', data=reviews)
 
 

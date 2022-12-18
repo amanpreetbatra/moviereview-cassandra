@@ -2,12 +2,9 @@
 {% block content2 %}
 
 
-
-
-
   <main id="main">
 
-
+    <section class="container position-relative" data-aos="fade-up" data-aos-delay="100">
 
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
@@ -17,20 +14,22 @@
 
 
 
-          <div class="col-lg-8">
+          <div class="col-lg-12">
             <div class="portfolio-info">
               <h3></h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Movie: </strong>:{{ data.0.movie }}</li>
+                <li><strong>Review Date</strong>: {{ data.0.review_date }}</li>
+                <li><strong>Reviewer Name</strong>: {{ data.0.reviewer }}</li>
+                <li><strong>Contains Spoiler</strong>:{{ data.0.spoiler_tag}}</li>
+                  <li><strong>Rating</strong>:{{ data.0.rating}}</li>
+
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2>{{ data.0.review_summary }}</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                {{ data.0.review_detail }}
               </p>
             </div>
           </div>
@@ -39,7 +38,7 @@
 
       </div>
     </section><!-- End Portfolio Details Section -->
-
+    </section>
   </main><!-- End #main -->
 
 
