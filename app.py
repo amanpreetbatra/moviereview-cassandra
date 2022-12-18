@@ -110,7 +110,7 @@ def add_review():
 def search_review():
     movie_name = request.args.get('movie')
 
-    query = "SELECT * FROM reviews WHERE movie=%s"
+    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM movie_keyspace.reviews WHERE  movie LIKE 'The%' ;"
     result = session.execute(query, (movie_name))
 
     reviews = []
