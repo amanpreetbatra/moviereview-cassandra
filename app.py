@@ -23,6 +23,7 @@ app = Flask(__name__)
 cluster = Cluster([IP])
 
 session = cluster.connect()
+session.default_timeout = 60
 k = "CREATE KEYSPACE IF NOT EXISTS movie_keyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };"
 session.execute(k)
 session.set_keyspace(KEYSPACE)
@@ -55,7 +56,7 @@ def display_result():
     page_state = request.form.get('page_state', default=None)
     page_state = None
     movie_name = request.form.get('search_value')
-    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%' ".format(movie_name)
+    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%'; ".format(movie_name)
 
     stmt = SimpleStatement(
         query,
