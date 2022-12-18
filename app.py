@@ -38,7 +38,6 @@ def display_result():
     retry_policy = RetryPolicy()
     page_size = 8
     page_state = request.form.get('page_state', default=None)
-    page_state = None
     movie_name = request.form.get('search_value')
     query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%'; ".format(movie_name)
 
@@ -63,8 +62,7 @@ def display_result():
             "review_summary": row.review_summary
         }
         )
-    print(result_set)
-    print(reviews)
+
     review = [reviews,movie_name,next_page_state]
     return render_template('reviewblock.html', data=review)
 
