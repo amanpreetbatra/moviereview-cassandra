@@ -43,7 +43,9 @@ def display_result():
     if page_state == None or page_state =='None':
         pass
     else:
-        page_state =binascii.unhexlify(page_state)
+        # page_state =binascii.unhexlify(page_state)
+        page_state = page_state.encode('latin1')
+
     movie_name = request.form.get('search_value')
     query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%'; ".format(movie_name)
 
@@ -57,7 +59,8 @@ def display_result():
     if result_set.paging_state == None or result_set.paging_state =='None':
         hex_string = result_set.paging_state
     else:
-        hex_string = binascii.hexlify(result_set.paging_state)
+        # hex_string = binascii.hexlify(result_set.paging_state)
+        hex_string = result_set.paging_state.decode('latin1')
     next_page_state = hex_string
 
     reviews = []
