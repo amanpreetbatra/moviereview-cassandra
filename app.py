@@ -21,9 +21,9 @@ from datetime import datetime
 import uuid
 from flask import Flask, request, jsonify, render_template
 from cassandra.cluster import Cluster
-
+from models import reviews as rr
 global IP
-IP = '127.0.0.1'
+IP = '172.18.0.2'
 global KEYSPACE
 KEYSPACE = "movie_keyspace"
 
@@ -43,29 +43,32 @@ session.set_keyspace(KEYSPACE)
 
 @app.route('/')
 def display_page():
-    query = "SELECT * FROM reviews LIMIT 100"
-    result = session.execute(query)
+    # query = "SELECT * FROM reviews LIMIT 100"
+    # result = session.execute(query)
 
-    reviews = []
-    for row in result:
-        reviews.append({
-            "review_id": row.review_id,
-            "reviewer": row.reviewer,
-            "movie": row.movie,
-            "rating": row.rating,
-            "review_summary": row.review_summary,
-            "review_date": row.review_date,
-            "spoiler_tag": row.spoiler_tag,
-            "review_detail": row.review_detail,
-            "helpful": row.helpful
-        }
-        )
-    return render_template('index.html', data=reviews)
-@app.route('/display_result', methods=['GET'])
+    # reviews = []
+    # for row in result:
+    #     reviews.append({
+    #         "review_id": row.review_id,
+    #         "reviewer": row.reviewer,
+    #         "movie": row.movie,
+    #         "rating": row.rating,
+    #         "review_summary": row.review_summary,
+    #         "review_date": row.review_date,
+    #         "spoiler_tag": row.spoiler_tag,
+    #         "review_detail": row.review_detail,
+    #         "helpful": row.helpful
+    #     }
+    #     )
+    return render_template('index.html')
+@app.route('/display_result', methods=['POST'])
 def display_result():
-    query = "SELECT * FROM reviews LIMIT 5"
+    movie_name = str(request.values.get('movie'))
+    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie = '{}' ALLOW FILTERING".format(movie_name)
     result = session.execute(query)
 
+    # r = rr.objects.filter(movie=movie_name)
+    # result = r.get()
     reviews = []
     for row in result:
         reviews.append({
@@ -73,11 +76,7 @@ def display_result():
             "reviewer": row.reviewer,
             "movie": row.movie,
             "rating": row.rating,
-            "review_summary": row.review_summary,
-            "review_date": row.review_date,
-            "spoiler_tag": row.spoiler_tag,
-            "review_detail": row.review_detail,
-            "helpful": row.helpful
+            "review_summary": row.review_summary
         }
         )
     return render_template('reviewblock.html', data=reviews)

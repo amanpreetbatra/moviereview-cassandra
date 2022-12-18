@@ -43,7 +43,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">KoolAid</a></h1>
+      <h1 class="logo"><a href="{{ url_for('display_page') }}">KoolAid</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -64,27 +64,30 @@
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9 text-center bottom-50" style="margin-bottom:2%">
-          <h1>IMDB Movie Repository and Reviews</h1>
+          <h1>IMDB Movie Reviews Repository </h1>
           <h2 >Search Movies</h2>
         </div>
       </div>
 
 
           <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search this blog" >
+              <form action="{{ url_for('display_result') }}" method="POST">
+    <input name="search_value" type="text" class="form-control" placeholder="Search a movie" >
     <div class="input-group-append">
-      <button id= "search_movies" class="btn btn-secondary" type="button" onclick="{{ url_for('display_result') }}">
+      <button id= "search_movies" class="btn btn-secondary" type="submit" value="submit" >
         <i class="fa fa-search">Search</i>
       </button>
     </div>
+              </form>
   </div>
-      </div>
-
-      <div class="row icon-boxes">
+        <div class="row icon-boxes">
           {% block content %}
         {% endblock %}
       </div>
     </div>
+      </div>
+
+
   </section><!-- End Hero -->
 
 
@@ -101,11 +104,7 @@
           &copy; Copyright <strong><span>Koolaid</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/ -->
-          Designed by <a href=#>KOOLAID</a>
+        Designed by <a href=#>KOOLAID</a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
@@ -132,10 +131,29 @@
 
   <!-- Template Main JS File -->
   <script src="../static/assets/js/main.js"></script>
-  <script>$('#search_movies').click(function(){
-   window.location.href="{{ url_for('display_result') }}";
+  <script>
+{#      $('#search_movies').click(function(){#}
+{#   window.location.href="{{ url_for('display_result') }}";#}
+{##}
 
-})</script>
+
+{#      $(function () {#}
+{#  $('#search_movies').click(function (event) {#}
+{#      let x = {#}
+{##}
+{#        movie: $('input[name=search_value]').val(),#}
+{##}
+{#      };#}
+{#      console.log(x);#}
+{#    $.post(#}
+{#      '{{ url_for('display_result') }}',x#}
+{#    );#}
+{#    event.preventDefault();#}
+
+
+
+
+  </script>
 
 </body>
 

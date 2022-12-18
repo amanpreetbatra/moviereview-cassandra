@@ -3,8 +3,10 @@
 {% for item in data %}
 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
           <div class="icon-box">
-            <div class="hidden">{{ item.review_id }}<i class="ri-stack-line"></i></div>
+              <div class="hidden" style="display: none">{{ item.review_id }}</div>
+            <div class="hidden">{{ item.reviewer }}<i class="ri-stack-line"></i></div>
             <h4 class="title"><a href="">{{ item.movie}}</a></h4>
+              <h5 class="rating"><b>Rating:</b> {{ item.rating}}</h5>
             <p class="description">{{ item.review_summary }}</p>
           </div>
         </div>
