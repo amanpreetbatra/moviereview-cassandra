@@ -31,28 +31,12 @@ session.set_keyspace(KEYSPACE)
 
 @app.route('/')
 def display_page():
-    # query = "SELECT * FROM reviews LIMIT 100"
-    # result = session.execute(query)
 
-    # reviews = []
-    # for row in result:
-    #     reviews.append({
-    #         "review_id": row.review_id,
-    #         "reviewer": row.reviewer,
-    #         "movie": row.movie,
-    #         "rating": row.rating,
-    #         "review_summary": row.review_summary,
-    #         "review_date": row.review_date,
-    #         "spoiler_tag": row.spoiler_tag,
-    #         "review_detail": row.review_detail,
-    #         "helpful": row.helpful
-    #     }
-    #     )
     return render_template('home.html')
 @app.route('/display_result', methods=['POST'])
 def display_result():
     retry_policy = RetryPolicy()
-    page_size = 10
+    page_size = 8
     page_state = request.form.get('page_state', default=None)
     page_state = None
     movie_name = request.form.get('search_value')
