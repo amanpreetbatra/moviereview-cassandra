@@ -17,7 +17,7 @@ session.execute(
     "CREATE KEYSPACE IF NOT EXISTS movie_keyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 }")
 session.execute("CREATE TABLE IF NOT EXISTS movie_keyspace.reviews (review_id text PRIMARY KEY,reviewer text,movie text,rating text,review_summary text,review_date text,spoiler_tag int,review_detail text,helpful List<text>)")
 
-session.execute("CREATE CUSTOM INDEX  fn_contains ON movie_keyspace.reviews(movie)  USING 'org.apache.cassandra.index.sasi.SASIIndex' WITH OPTIONS = { 'mode': 'CONTAINS' };")
+# session.execute("CREATE CUSTOM INDEX  fn_contains ON movie_keyspace.reviews(movie)  USING 'org.apache.cassandra.index.sasi.SASIIndex' WITH OPTIONS = {'mode': 'CONTAINS', 'analyzer_class': 'org.apache.cassandra.index.sasi.analyzer.StandardAnalyzer', 'case_sensitive': 'false'};")
 def insert_batch(batch):
     batch_stmt = BatchStatement()
     for item in batch:
@@ -32,7 +32,7 @@ def insert_batch(batch):
         session.execute_async(query, (item['review_id'],item['reviewer'],item['movie'],item['rating'],item['review_summary'],item['review_date'],item['spoiler_tag'],item['review_detail'],item['helpful']))
 
 
-with open('data.json', 'r') as f:
+with open('/home/amanpreet/Downloads/archive/part-01.json', 'r') as f:
     data = json.load(f)
 
 num_processes = 4
