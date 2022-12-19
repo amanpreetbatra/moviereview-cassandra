@@ -31,15 +31,15 @@
           </div>
         </div>
 {% endfor %}
-<div>
-    <form   action="{{ url_for('display_result') }}"   method="POST">
-        <input name="search_value" type="hidden" value="{{ data.1 }}" placeholder="Search a movie" >
-        <input name="page_state" type="hidden" value="{{ data.2 }}" placeholder="Search a movie" >
-    <div class="input-group-append col-md-2 text-center">
-      <button id= "search_movies" class="btn btn-secondary " type="submit" value="submit" >
-        <i class="fa fa-search">Next</i>
-      </button>
-    </div>
-     </form>
-    </div>
+{#<div>#}
+{#    <form   action="{{ url_for('display_result') }}"   method="POST">#}
+{#        <input name="search_value" type="hidden" value="{{ data.1 }}" placeholder="Search a movie" >#}
+{#        <input name="page_state" type="hidden" value="{{ data.2 }}" placeholder="Search a movie" >#}
+{#    <div class="input-group-append col-md-2 text-center">#}
+{#      <button id= "search_movies" class="btn btn-secondary " type="submit" value="submit" >#}
+{#        <i class="fa fa-search">Next</i>#}
+{#      </button>#}
+{#    </div>#}
+{#     </form>#}
+{#    </div>#}
 {% endblock %}
