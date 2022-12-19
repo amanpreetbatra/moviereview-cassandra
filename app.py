@@ -40,33 +40,25 @@ def display_result():
     page_size = 8
     page_state = request.form.get('page_state', default=None)
     print(page_state)
-    # if page_state == None or page_state =='None':
-    #     pass
-    # else:
-    #     # page_state =binascii.unhexlify(page_state)
-    #     page_state = page_state.encode('latin1')
+
     x = json.loads(page_state)
     page_state=x['next_page_state']
     print(page_state)
     if(page_state==''):
         page_state=None
     movie_name = request.form.get('search_value')
-    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%'; ".format(movie_name)
+    query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%' LIMIT 8; ".format(movie_name)
 
-    stmt = SimpleStatement(
-        query,
-        fetch_size=page_size,
-        retry_policy=retry_policy
-    )
-    result_set = session.execute(stmt,paging_state=page_state)
-    items = result_set.current_rows
-    # if result_set.paging_state == None or result_set.paging_state =='None':
-    #     hex_string = result_set.paging_state
-    # else:
-    #     # hex_string = binascii.hexlify(result_set.paging_state)
-    #     hex_string = result_set.paging_state.decode('latin1')
-    next_page_state = result_set.paging_state
-
+    # stmt = SimpleStatement(
+    #     query,
+    #     fetch_size=page_size,
+    #     retry_policy=retry_policy
+    # )
+    # result_set = session.execute(stmt,paging_state=page_state)
+    # items = result_set.current_rows
+    #
+    # next_page_state = result_set.paging_state
+    items = session.execute(query)
     reviews = []
 
     for row in items:
@@ -79,12 +71,11 @@ def display_result():
         }
         )
 
-    if next_page_state== None:
-        next_page_state=''
-    ns =jsonify( {"next_page_state": next_page_state })
+    # if next_page_state== None:
+    #     next_page_state=''
+    # ns =jsonify( {"next_page_state": next_page_state })
 
-    review = [reviews,movie_name,ns]
-    print(review)
+    review = [reviews,movie_name,None]
     return render_template('reviewblock.html', data=review)
 
 
