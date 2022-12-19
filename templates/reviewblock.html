@@ -2,7 +2,7 @@
 {% block content %}
 {% for item in data.0 %}
 
-<div id = "{{ item.review_id }}" class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+<div id = "{{ item.review_id }}" class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 " data-aos="zoom-in" data-aos-delay="200">
           <div class="icon-box">
               <div name = "next_page_state" class="hidden" style="display: none">{{ data.next_page_state }}</div>
               <div class="hidden" style="display: none">{{ item.review_id }}</div>
