@@ -17,7 +17,7 @@ session.execute(
     "CREATE KEYSPACE IF NOT EXISTS movie_keyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 }")
 session.execute("CREATE TABLE IF NOT EXISTS movie_keyspace.reviews (review_id text PRIMARY KEY,reviewer text,movie text,rating text,review_summary text,review_date text,spoiler_tag int,review_detail text,helpful List<text>)")
 
-session.execute("CREATE CUSTOM INDEX   fn_contains ON movie_keyspace.reviews(movie)  USING 'org.apache.cassandra.index.sasi.SASIIndex' WITH OPTIONS = {'mode': 'CONTAINS', 'analyzer_class': 'org.apache.cassandra.index.sasi.analyzer.NonTokenizingAnalyzer', 'case_sensitive': 'false'};")
+# session.execute("CREATE CUSTOM INDEX   fn_contains ON movie_keyspace.reviews(movie)  USING 'org.apache.cassandra.index.sasi.SASIIndex' WITH OPTIONS = {'mode': 'CONTAINS', 'analyzer_class': 'org.apache.cassandra.index.sasi.analyzer.NonTokenizingAnalyzer', 'case_sensitive': 'false'};")
 def insert_batch(batch):
     batch_stmt = BatchStatement()
     for item in batch:
