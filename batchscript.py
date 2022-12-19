@@ -32,7 +32,7 @@ def insert_batch(batch):
         session.execute_async(query, (item['review_id'],item['reviewer'],item['movie'],item['rating'],item['review_summary'],item['review_date'],item['spoiler_tag'],item['review_detail'],item['helpful']))
 
 
-with open('../data/part-01.json', 'r') as f:
+with open('../data/part-02.json', 'r') as f:
     data = json.load(f)
 
 num_processes = 4
