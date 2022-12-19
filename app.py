@@ -24,7 +24,7 @@ app = Flask(__name__)
 cluster = Cluster([IP])
 
 session = cluster.connect()
-session.default_timeout = 60
+session.default_timeout = 80
 k = "CREATE KEYSPACE IF NOT EXISTS movie_keyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };"
 session.execute(k)
 session.set_keyspace(KEYSPACE)
@@ -48,8 +48,8 @@ def display_result():
     #     page_state=None
     movie_name = request.form.get('search_value')
     query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%' LIMIT 8; ".format(movie_name)
-    query2 = "SELECT COUNT(*) FROM reviews WHERE  movie LIKE  '%{}%'; ".format(
-        movie_name)
+    # query2 = "SELECT COUNT(*) FROM reviews WHERE  movie LIKE  '%{}%'; ".format(
+    #     movie_name)
 
     # stmt = SimpleStatement(
     #     query,
@@ -61,7 +61,7 @@ def display_result():
     #
     # next_page_state = result_set.paging_state
     items = session.execute(query)
-    item1 = session.execute(query2)
+    # item1 = session.execute(query2)
     reviews = []
 
     for row in items:
@@ -78,7 +78,7 @@ def display_result():
     #     next_page_state=''
     # ns =jsonify( {"next_page_state": next_page_state })
 
-    review = [reviews,item1]
+    review = [reviews]
     return render_template('reviewblock.html', data=review)
 
 
