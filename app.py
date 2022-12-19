@@ -48,6 +48,8 @@ def display_result():
     #     page_state=None
     movie_name = request.form.get('search_value')
     query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%' LIMIT 8; ".format(movie_name)
+    query2 = "SELECT COUNT(review_id, reviewer, rating, movie, review_summary) FROM reviews WHERE  movie LIKE  '%{}%'; ".format(
+        movie_name)
 
     # stmt = SimpleStatement(
     #     query,
@@ -59,6 +61,7 @@ def display_result():
     #
     # next_page_state = result_set.paging_state
     items = session.execute(query)
+    item1 = session.execute(query2)
     reviews = []
 
     for row in items:
@@ -75,7 +78,7 @@ def display_result():
     #     next_page_state=''
     # ns =jsonify( {"next_page_state": next_page_state })
 
-    review = [reviews,movie_name,None]
+    review = [reviews,item1]
     return render_template('reviewblock.html', data=review)
 
 
@@ -84,6 +87,7 @@ def get_review():
     reviewid = request.form.get('reviewid')
 
     query = "SELECT * FROM movie_keyspace.reviews WHERE  review_id='{}' ;".format(reviewid)
+
     result = session.execute(query)
 
     reviews = []
