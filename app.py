@@ -48,7 +48,7 @@ def display_result():
     #     page_state=None
     movie_name = request.form.get('search_value')
     query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%' LIMIT 8; ".format(movie_name)
-    query2 = "SELECT COUNT(review_id, reviewer, rating, movie, review_summary) FROM reviews WHERE  movie LIKE  '%{}%'; ".format(
+    query2 = "SELECT COUNT(*) FROM reviews WHERE  movie LIKE  '%{}%'; ".format(
         movie_name)
 
     # stmt = SimpleStatement(
