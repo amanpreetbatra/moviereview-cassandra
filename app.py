@@ -48,6 +48,8 @@ def display_result():
     x = json.loads(page_state)
     page_state=x['next_page_state']
     print(page_state)
+    if(page_state==''):
+        page_state=None
     movie_name = request.form.get('search_value')
     query = "SELECT review_id, reviewer, rating, movie, review_summary FROM reviews WHERE  movie LIKE  '%{}%'; ".format(movie_name)
 
@@ -76,6 +78,9 @@ def display_result():
             "review_summary": row.review_summary
         }
         )
+
+    if next_page_state== None:
+        next_page_state=''
     ns =jsonify( {"next_page_state": next_page_state })
 
     review = [reviews,movie_name,ns]
